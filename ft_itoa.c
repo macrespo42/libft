@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 18:28:20 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/09 11:02:49 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/09 14:22:09 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ char				*ft_itoa(int n)
 
 	if (!(nptr = (char*)malloc(sizeof(char) * size_alloc(n))))
 		return (NULL);
-	if (n == INT_MIN)
-		return ("-2147483648");
+	if (n == INT_MIN || n == 0)
+		return (n == 0 ? "0" : "-2147483648");
 	neg = 0;
 	if (n < 0)
 	{

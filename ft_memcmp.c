@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 21:22:11 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/07 21:53:01 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/09 12:27:32 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n)
 	s1_cp = (unsigned char*)s1;
 	s2_cp = (unsigned char*)s2;
 	i = 0;
-	while (i < n && s1_cp == s2_cp)
+	while (i < n)
+	{
+		if (s1_cp[i] != s2_cp[i])
+			return (s1_cp[i] - s2_cp[i]);
 		i++;
-	return (s1_cp[i] - s2_cp[i]);
+	}
+	return (0);
 }

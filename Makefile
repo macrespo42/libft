@@ -1,4 +1,4 @@
-EXEC = libft.a
+NAME = libft.a
 
 CC = gcc
 
@@ -36,15 +36,16 @@ SRC = ft_memset.c \
 	ft_strmapi.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
-	ft_putendl_fd.c
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c
 
 OBJ = $(SRC:.c=.o)
 
-all: $(EXEC)
+all: $(NAME)
 
-$(EXEC): $(OBJ)
-	ar rc $(EXEC) $^
-	ranlib $(EXEC)
+$(NAME): $(OBJ)
+	ar rc $(NAME) $^
+	ranlib $(NAME)
 
 %.o: %.c
 	@echo "\033[0;33mGenerating obj..."
@@ -55,6 +56,6 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(EXEC)
+	rm -f $(NAME)
 
 re: fclean all

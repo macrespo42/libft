@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:58:11 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/07 18:25:22 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/09 12:35:17 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int			ft_atoi(const char *str)
 	neg = 0;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i])
+		if (str[i] == '-')
 			neg++;
 		i++;
 	}

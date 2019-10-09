@@ -1,0 +1,6 @@
+.DS_Store
+libft.a
+*.o
+ft.subject.pdf
+main.c
+a.out

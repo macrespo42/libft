@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:38:46 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/08 18:23:05 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/09 11:01:13 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int		nb_words(const char *s, char c)
 {
-	int		i;
-	int		words;
+	int			i;
+	int			words;
 
 	i = 0;
 	words = 0;
@@ -32,7 +32,7 @@ static int		nb_words(const char *s, char c)
 
 static int		word_len(const char *s, int pos, char c)
 {
-	int		i;
+	int			i;
 
 	i = 0;
 	while (s[pos] != c)
@@ -43,7 +43,7 @@ static int		word_len(const char *s, int pos, char c)
 	return (i);
 }
 
-char		**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	int			i;
 	int			j;

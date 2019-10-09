@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:27:39 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/08 15:26:39 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/09 11:00:12 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int		end_pos(char const *s1, char const *set)
 	return (i + 1);
 }
 
-char 			*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	int			i;
 	int			start_pos;

@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:04:19 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/07 17:07:47 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/09 18:18:27 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 size_t		ft_strlcpy(char *dst, char *src, size_t dstsize)
 {
-	size_t		i;
+	size_t srclen;
 
-	i = 0;
-	while (src[i] && i < dstsize - 1)
+	srclen = ft_strlen(src);
+	if (srclen + 1 < dstsize)
+		ft_memcpy(dst, src, srclen + 1);
+	else if (dstsize != 0)
 	{
-		dst[i] = src[i];
-		i++;
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = '\0';
 	}
-	src[i] = '\0';
-	return (i);
+	return (srclen);
 }

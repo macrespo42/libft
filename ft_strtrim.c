@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:27:39 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/09 11:00:12 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/10 14:22:53 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	start_pos = start_set(s1, set);
 	size_alloc = ft_strlen(s1) - (start_set(s1, set) + end_set(s1, set));
+	if (size_alloc <= 0)
+		return ("\0");
 	if (!(s2 = (char*)malloc(sizeof(char) * size_alloc + 1)))
 		return (NULL);
 	i = 0;

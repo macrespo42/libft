@@ -6,11 +6,12 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:38:46 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/09 11:01:13 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/10 14:16:09 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int		nb_words(const char *s, char c)
 {
@@ -23,7 +24,7 @@ static int		nb_words(const char *s, char c)
 		words++;
 	while (s[i])
 	{
-		if (s[i] != c && s[i - 1] == c)
+		if ((s[i] != c && s[i - 1] == c) && s[i])
 			words++;
 		i++;
 	}
@@ -35,7 +36,7 @@ static int		word_len(const char *s, int pos, char c)
 	int			i;
 
 	i = 0;
-	while (s[pos] != c)
+	while (s[pos] != c && s[pos])
 	{
 		pos++;
 		i++;
@@ -52,13 +53,13 @@ char			**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	if (!(strs = (char**)malloc(sizeof(char*) * nb_words(s, c))))
+	if (!(strs = (char**)malloc(sizeof(char*) * nb_words(s, c) + 1)))
 		return (NULL);
 	k = 0;
 	i = -1;
 	while (++i < nb_words(s, c))
 	{
-		while (s[k] == c && s[k])
+		while (s[k] && s[k] == c)
 			k++;
 		if (!(strs[i] = (char*)malloc(sizeof(char) * word_len(s, k, c) + 1)))
 			return (NULL);
@@ -67,5 +68,6 @@ char			**ft_split(char const *s, char c)
 			strs[i][j++] = s[k++];
 		strs[i][j] = '\0';
 	}
+	strs[i] = NULL;
 	return (strs);
 }

@@ -6,13 +6,13 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 11:49:38 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/10 15:10:25 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/10 15:43:32 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_BONUS_H
 # define LIBFT_BONUS_H
-# include <stdlib.c>
+# include <stdlib.h>
 
 typedef struct		s_list
 {

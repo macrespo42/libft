@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 14:50:58 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/10 16:01:19 by macrespo         ###   ########.fr       */
+/*   Created: 2019/10/10 15:54:17 by macrespo          #+#    #+#             */
+/*   Updated: 2019/10/10 16:40:25 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
-
-t_list				*ft_lstnew(void *content)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list		*new;
-
-	if (!(new = (t_list*)malloc(sizeof(t_list))))
-		return (NULL);
-	if (new)
-	{
-		new->content = content;
-		new->next = NULL;
-	}
-	return (new);
+		if (!*alst)
+			return (NULL);
+		while (*alst->next)
+			*alst = *alst->next;
+		new->next = *alst->next;
 }

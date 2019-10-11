@@ -37,7 +37,7 @@ SRC = ft_memset.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c 
 
 OBJ = $(SRC:.c=.o)
 
@@ -51,6 +51,8 @@ $(NAME): $(OBJ)
 	@echo "\033[0;33mGenerating obj..."
 	$(CC) -c $< $(CFLAGS)
 	@echo "\033[0m"
+
+bonus : $(NAME)
 
 clean:
 	rm -f $(OBJ)

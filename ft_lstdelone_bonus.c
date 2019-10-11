@@ -6,9 +6,11 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:46:03 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/10 17:00:44 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/10 18:27:57 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft_bonus.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {

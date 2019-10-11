@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:38:46 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/10 23:01:07 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/11 18:36:05 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int		nb_words(const char *s, char c)
 
 	i = 0;
 	words = 0;
+	if (s[0] == '\0')
+		return (0);
 	if (s[0] != c)
 		words++;
 	while (s[i])

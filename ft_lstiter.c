@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 07:52:25 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/11 10:18:53 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/11 18:40:55 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (lst)
+	if (lst || f)
 	{
 		while (lst)
 		{
-			f(lst);
+			f(lst->content);
 			lst = lst->next;
 		}
 	}

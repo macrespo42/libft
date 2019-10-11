@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:08:39 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/10 18:13:27 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/11 15:43:46 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*curr;
-	t_list	*prev;
+	t_list		*tmp;
+	t_list		*current;
 
-	if (*lst)
+	if (lst)
 	{
-		curr = *lst;
-		while (curr)
+		tmp = *lst;
+		while (tmp)
 		{
-			prev = curr;
-			del(curr->content);
-			free(curr);
-			curr = prev;
+			current = tmp;
+			del(tmp->content);
+			free(tmp);
+			tmp = current->next;
 		}
-		curr->next = NULL;
+		*lst = NULL;
 	}
 }

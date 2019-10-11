@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:48:52 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/11 11:09:06 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/09 17:07:03 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,6 @@
 # include <string.h>
 # include <stdlib.h>
 
-typedef struct		s_list
-{
-	char			*content;
-	struct s_list	*next;
-}					t_list;
-int					ft_lstsize(t_list *lst);
-t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(void*));
-t_list				*ft_lstnew(void *content);
-void				ft_lstadd_back(t_list **alst, t_list *new);
-void				ft_lstadd_front(t_list **alst, t_list *new);
-void				ft_lstclear(t_list **lst, void (*del)(void*));
-void				ft_lstdelone(t_list *lst, void (*del)(void*));
-void				ft_lstiter(t_list *lst, void (*f)(void *));
 char		*ft_itoa(int n);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(const char *s1);

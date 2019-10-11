@@ -6,12 +6,11 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:38:46 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/10 14:16:09 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/10 23:01:07 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int		nb_words(const char *s, char c)
 {

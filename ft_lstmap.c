@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 09:26:53 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/14 05:44:30 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/14 09:06:27 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,25 @@
 
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void*))
 {
-	t_list		*tmp;
 	t_list		*new_l;
+	t_list		*tmp;
 
+	if (!(new_l = (t_list*)malloc(sizeof(t_list))))
+		return (NULL);
 	tmp = NULL;
-	new_l = NULL;
-	while (lst)
+	if (lst && f)
 	{
-		if (!new_l)
+		tmp = lst;
+		while (tmp)
 		{
-			new_l = f(lst);
-			tmp = new_l;
+			if (new_l == NULL)
+			{
+				new_l = f(lst);
+				tmp = tmp->next;
+			}
+			else
+				new_l = lst->next;
 		}
-		else
-			tmp->next = f(lst);
 	}
 	return (new_l);
 }

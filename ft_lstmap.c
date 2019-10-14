@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 09:26:53 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/13 15:12:31 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/14 05:26:46 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(void*))
 		if (!new_l)
 		{
 			new_l = f(lst);
-			tmp = new;
+			tmp = new_l;
 		}
 		else
 			tmp->next = f(lst);

@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 11:49:38 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/11 15:57:01 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/14 05:44:19 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct		s_list
 }					t_list;
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(void*));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void*));
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstadd_front(t_list **alst, t_list *new);

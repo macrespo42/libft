@@ -6,30 +6,31 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:38:46 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/11 18:36:05 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/15 12:20:32 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		nb_words(const char *s, char c)
+static size_t    count_words(const char *str, char c)
 {
-	int			i;
-	int			words;
+    size_t    count;
+    size_t    i;
 
-	i = 0;
-	words = 0;
-	if (s[0] == '\0')
-		return (0);
-	if (s[0] != c)
-		words++;
-	while (s[i])
-	{
-		if ((s[i] != c && s[i - 1] == c) && s[i])
-			words++;
-		i++;
-	}
-	return (words);
+    count = 0;
+    i = 0;
+    while (str[i])
+    {
+        while (str[i] && str[i] == c)
+            i++;
+        if (str[i] && str[i] != c)
+        {
+            count++;
+            while (str[i] && str[i] != c)
+                i++;
+        }
+    }
+    return (count);
 }
 
 static int		word_len(const char *s, int pos, char c)
@@ -54,11 +55,11 @@ char			**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	if (!(strs = (char**)malloc(sizeof(char*) * nb_words(s, c) + 1)))
+	if (!(strs = (char**)malloc(sizeof(char*) * (count_words(s, c) + 1))))
 		return (NULL);
 	k = 0;
 	i = -1;
-	while (++i < nb_words(s, c))
+	while (++i < (int)count_words(s, c))
 	{
 		while (s[k] && s[k] == c)
 			k++;

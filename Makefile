@@ -61,7 +61,7 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	@echo "\033[0;33mGenerating obj..."
-	$(CC) -c $^ $(CFLAGS)
+	$(CC) -c $(CFLAGS) $^
 	@echo "\033[0m"
 
 bonus : $(OBJ) $(BONUS_OBJ)

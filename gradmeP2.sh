@@ -1,5 +1,5 @@
 make
-gcc -Wall -Wextra -Werror mainP2.c -L. libft.a
+gcc mainP2.c libft.a
 ./a.out
 rm a.out
 make fclean

@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 19:59:44 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/14 21:49:36 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/15 10:18:17 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,27 @@ void	strtim()
 		printf("\n");
 }
 
+void	split()
+{
+	char		**splited;
+	int			i;
+//	for (int i = 0; i < 5; i++)
+//		printf("\n");
+	ft_putstr_fd("TESTING FT_SPLIT\n", 1);
+	splited = ft_split("Coucou les copains", 's');
+	ft_putstr_fd("With string : Coucou les copains and sep is space\n", 1);
+	i = -1;
+	while (splited[++i])
+		printf("%s\n", splited[i]);
+//	for (int i = 0; i < 5; i++)
+//		ft_putstr_fd("\n", 1);
+}
+
 int		main(void)
 {
-	substr();
-	strjoin();
-	strtim();
+	// substr();
+	// strjoin();
+	// strtim();
+	split();
 	return (0);
 }

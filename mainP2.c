@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 19:59:44 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/15 14:27:26 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/15 15:22:59 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	strjoin()
 		printf("\n");
 }
 
-void	strtim()
+void	strtrim()
 {
 	for (int i = 0; i < 5; i++)
 		printf("\n");
@@ -71,18 +71,37 @@ void	split()
 		printf("%s\n", splited[i]);
 		i++;
 	}
-	printf("[With NULL string : %s] --- [expect : NULL]\n", ft_split(NULL, ' '));
-	printf("[With NULL string : %s] --- [expect : NULL]\n", ft_split("Hello World", NULL));
-	printf("[With empty string : ]\n", );
+	printf("[With NULL string : %s] --- [expect : NULL]\n", ft_split(NULL, ' ')[0]);
+	printf("[With empty string : %s] --- [expect : empty string]\n", ft_split("", ' ')[0]);
+	printf("[If no C in string : %s] --- [expect : empty string]\n", ft_split("hello", 'r')[0]);
 	for (int i = 0; i < 5; i++)
 		ft_putstr_fd("\n", 1);
+}
+
+void	itoa()
+{
+	for (int i = 0; i < 5; i++)
+		printf("\n");
+	printf("TESTING FT_ITOA\n");
+	printf("[%s] --- [expect : 42]\n", ft_itoa(42));
+	printf("[%s] --- [expect : -42]\n", ft_itoa(-42));
+	printf("[%s] --- [expect : 123456]\n", ft_itoa(123456));
+	printf("[%s] --- [expect : -123456]\n", ft_itoa(-123456));
+	printf("[%s] --- [expect : 2147483647]\n", ft_itoa(2147483647));
+	printf("[%s] --- [expect : 2147483647]\n", ft_itoa(2147483647));
+	printf("[%s] --- [expect : -2147483648]\n", ft_itoa(-2147483648));
+	printf("[%s] --- [expect : 0]\n", ft_itoa(0));
+	for (int i = 0; i < 5; i++)
+		printf("\n");
 }
 
 int		main(void)
 {
 	substr();
 	strjoin();
-	strtim();
+	strtrim();
 	split();
+	itoa();
+	printf("For others just check NULL params\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 09:32:32 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/09 09:48:07 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/15 15:19:15 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int			i;
 	char		*new_s;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	if (!(new_s = (char*)malloc(sizeof(char) * ft_strlen(s) + 1)))
 		return (NULL);

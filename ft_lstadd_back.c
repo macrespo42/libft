@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 15:54:17 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/11 14:43:21 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/15 14:28:04 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 {
 	t_list		*tmp;
 
-	if (*alst)
+	if (*alst && new)
 	{
 		tmp = *alst;
 		while (tmp->next)

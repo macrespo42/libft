@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 09:26:53 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/14 14:11:26 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/15 14:29:27 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void*))
 	t_list		*prev;
 	t_list		*start;
 
-	if (!lst && !f)
+	if (!lst || !f)
 		return (NULL);
 	tmp = lst;
 	start = NULL;

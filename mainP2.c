@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 19:59:44 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/15 10:18:17 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/15 14:27:26 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,23 +60,29 @@ void	split()
 {
 	char		**splited;
 	int			i;
-//	for (int i = 0; i < 5; i++)
-//		printf("\n");
+	for (int i = 0; i < 5; i++)
+		printf("\n");
 	ft_putstr_fd("TESTING FT_SPLIT\n", 1);
 	splited = ft_split("Coucou les copains", 's');
-	ft_putstr_fd("With string : Coucou les copains and sep is space\n", 1);
-	i = -1;
-	while (splited[++i])
+	ft_putstr_fd("With string : 'Coucou les copains' and c : ' '\n", 1);
+	i = 0;
+	while (splited[i])
+	{
 		printf("%s\n", splited[i]);
-//	for (int i = 0; i < 5; i++)
-//		ft_putstr_fd("\n", 1);
+		i++;
+	}
+	printf("[With NULL string : %s] --- [expect : NULL]\n", ft_split(NULL, ' '));
+	printf("[With NULL string : %s] --- [expect : NULL]\n", ft_split("Hello World", NULL));
+	printf("[With empty string : ]\n", );
+	for (int i = 0; i < 5; i++)
+		ft_putstr_fd("\n", 1);
 }
 
 int		main(void)
 {
-	// substr();
-	// strjoin();
-	// strtim();
+	substr();
+	strjoin();
+	strtim();
 	split();
 	return (0);
 }

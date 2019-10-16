@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 22:02:41 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/08 12:40:21 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/16 19:07:53 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void		*ft_calloc(size_t count, size_t size)
 {
 	unsigned char		*tab;
 
-	if (!(tab = (unsigned char*)malloc(size * count + 1)))
+	if (!(tab = (unsigned char*)malloc(size * count)))
 		return (NULL);
-	ft_bzero(tab, count * size + 1);
+	ft_bzero(tab, count * size);
 	return (tab);
 }

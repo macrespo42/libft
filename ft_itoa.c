@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 18:28:20 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/09 14:22:09 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/16 19:12:37 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,20 @@ static char			*ft_strrev(char *str)
 	return (str);
 }
 
+static char			*ft_strcpy(const char *src, char *dst)
+{
+	int		i;
+
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}
+
 char				*ft_itoa(int n)
 {
 	int			i;
@@ -58,7 +72,7 @@ char				*ft_itoa(int n)
 	if (!(nptr = (char*)malloc(sizeof(char) * size_alloc(n))))
 		return (NULL);
 	if (n == INT_MIN || n == 0)
-		return (n == 0 ? "0" : "-2147483648");
+		return (n == 0 ? ft_strcpy("0", nptr) : ft_strcpy("-2147483648", nptr));
 	neg = 0;
 	if (n < 0)
 	{

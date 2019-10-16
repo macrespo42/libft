@@ -6,11 +6,11 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 15:09:36 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/15 14:29:06 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/16 10:08:40 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {

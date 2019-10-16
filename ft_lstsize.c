@@ -6,11 +6,11 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 15:29:32 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/15 14:30:09 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/16 10:08:49 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 int		ft_lstsize(t_list *lst)
 {

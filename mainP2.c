@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 19:59:44 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/15 15:22:59 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/16 09:20:21 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,6 @@ void	split()
 		printf("%s\n", splited[i]);
 		i++;
 	}
-	printf("[With NULL string : %s] --- [expect : NULL]\n", ft_split(NULL, ' ')[0]);
-	printf("[With empty string : %s] --- [expect : empty string]\n", ft_split("", ' ')[0]);
-	printf("[If no C in string : %s] --- [expect : empty string]\n", ft_split("hello", 'r')[0]);
 	for (int i = 0; i < 5; i++)
 		ft_putstr_fd("\n", 1);
 }

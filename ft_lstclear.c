@@ -6,11 +6,11 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:08:39 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/14 12:03:31 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/16 10:09:35 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

@@ -6,31 +6,31 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:38:46 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/15 12:20:32 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/16 10:13:45 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t    count_words(const char *str, char c)
+static size_t	count_words(const char *str, char c)
 {
-    size_t    count;
-    size_t    i;
+	size_t		count;
+	size_t		i;
 
-    count = 0;
-    i = 0;
-    while (str[i])
-    {
-        while (str[i] && str[i] == c)
-            i++;
-        if (str[i] && str[i] != c)
-        {
-            count++;
-            while (str[i] && str[i] != c)
-                i++;
-        }
-    }
-    return (count);
+	count = 0;
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] && str[i] == c)
+			i++;
+		if (str[i] && str[i] != c)
+		{
+			count++;
+			while (str[i] && str[i] != c)
+				i++;
+		}
+	}
+	return (count);
 }
 
 static int		word_len(const char *s, int pos, char c)

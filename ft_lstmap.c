@@ -6,13 +6,13 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 09:26:53 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/16 10:09:04 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/18 13:45:33 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void*))
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *))
 {
 	t_list		*new_l;
 	t_list		*tmp;
@@ -27,7 +27,10 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void*))
 	while (tmp)
 	{
 		if (!(new_l = (t_list*)malloc(sizeof(t_list))))
+		{
+			del(lst);
 			return (NULL);
+		}
 		if (prev)
 			prev->next = new_l;
 		prev = new_l;

@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 11:06:44 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/09 11:12:22 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/20 15:22:49 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void		ft_putendl_fd(char *s, int fd)
 {
-	if (!s)
+	if (!s || fd < 0)
 		return ;
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);

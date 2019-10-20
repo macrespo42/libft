@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:48:52 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/16 10:11:50 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/19 17:09:28 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
-size_t				ft_strlcpy(char *dst, char *src, size_t dstsize);
+size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *s);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void*));

@@ -6,13 +6,13 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:04:19 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/09 18:18:27 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/19 16:54:23 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcpy(char *dst, char *src, size_t dstsize)
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t srclen;
 

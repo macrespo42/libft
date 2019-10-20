@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 11:26:03 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/09 11:52:51 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/20 13:27:11 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n == INT_MIN)
 	{
 		ft_putstr_fd("-2147483648", fd);

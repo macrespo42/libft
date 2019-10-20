@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 22:13:00 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/07 22:32:03 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/19 19:09:02 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char		*ft_strdup(const char *s1)
 	int			i;
 	char		*s2;
 
+	if (!s1)
+		return (NULL);
 	if (!(s2 = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
 		return (NULL);
 	i = 0;

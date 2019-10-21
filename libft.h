@@ -6,14 +6,12 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:48:52 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/19 17:09:28 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/21 13:22:15 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
@@ -51,7 +49,7 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *s);
 t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void*));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list				*ft_lstnew(void *content);
 void				ft_bzero(void *s, size_t n);
 void				ft_lstadd_back(t_list **alst, t_list *new);

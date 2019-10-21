@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 20:52:00 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/21 09:34:49 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/21 19:29:30 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	temp[len];
 
 	i = 0;
+	if (!dst && !src)
+		return (NULL);
 	p = (unsigned char *)dst;
 	q = (unsigned char *)src;
 	while (i < len)

@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:23:42 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/09 18:31:58 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/22 10:10:21 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,12 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (dstsize <= dest_size)
 		return (src_size + dstsize);
 	i = 0;
-	while (dst[i])
-		i++;
 	j = 0;
-	while (src[j] && i < (dstsize - 1))
+	while (src[i] && (dest_size + i) < (dstsize - 1))
 	{
-		dst[i] = src[j];
+		dst[dest_size + i] = src[i];
 		i++;
-		j++;
 	}
-	dst[i] = '\0';
+	dst[dest_size + i] = '\0';
 	return (dest_size + src_size);
 }

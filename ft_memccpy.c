@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 20:38:40 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/09 17:59:31 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/22 09:44:29 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		dst_cp[i] = src_cp[i];
 		if (src_cp[i] == (unsigned char)c)
-			return (dst_cp + i + 1);
+			return (dst + i + 1);
 		i++;
 	}
 	return (NULL);

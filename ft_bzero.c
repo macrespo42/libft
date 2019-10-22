@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 18:55:32 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/07 20:20:14 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/22 09:33:27 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void		ft_bzero(void *s, size_t n)
 {
-	size_t				i;
-	unsigned char		*str;
+	size_t		i;
+	char		*str;
 
-	str = (unsigned char*)s;
+	str = (char*)s;
 	i = 0;
 	while (i < n)
 	{

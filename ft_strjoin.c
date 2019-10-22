@@ -6,7 +6,7 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 12:59:09 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/08 13:55:40 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/22 10:30:57 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char		*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	if (!(s3 = (char*)malloc(sizeof(char) * size)))
+	size = ft_strlen(s1) + ft_strlen(s2);
+	if (!(s3 = (char*)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	i = 0;
 	while (s1[i])

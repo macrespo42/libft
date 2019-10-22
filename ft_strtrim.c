@@ -6,15 +6,15 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:27:39 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/10 14:25:40 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/22 10:37:13 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		is_in_set(char c, char const *set)
+static int	isset(char c, char const *set)
 {
-	int		i;
+	int i;
 
 	i = 0;
 	while (set[i])
@@ -26,63 +26,46 @@ static int		is_in_set(char c, char const *set)
 	return (0);
 }
 
-static int		start_set(char const *s1, char const *set)
+static int	strlen_trim(char const *s1, char const *set)
 {
+	int len;
+	int i1;
+	int i2;
+
+	len = ft_strlen(s1);
+	i1 = 0;
+	i2 = len - 1;
+	while (i1 < len && isset(s1[i1], set))
+	{
+		i1++;
+		len--;
+	}
+	while (i2 >= 0 && isset(s1[i2], set))
+	{
+		i2--;
+		len--;
+	}
+	if (len < 0)
+		len = 0;
+	return (len);
+}
+
+char		*ft_strtrim(char const *s1, char const *set)
+{
+	char	*s_new;
+	int		len;
 	int		i;
 
 	i = 0;
-	while (s1[i] && is_in_set(s1[i], set))
-		i++;
-	return (i);
-}
-
-static int		end_set(char const *s1, char const *set)
-{
-	int		i;
-	int		end;
-
-	i = ft_strlen(s1) - 1;
-	end = 0;
-	while (i > 0 && is_in_set(s1[i], set))
-	{
-		end++;
-		i--;
-	}
-	return (end);
-}
-
-static int		end_pos(char const *s1, char const *set)
-{
-	int		i;
-
-	i = ft_strlen(s1) - 1;
-	while (i > 0 && is_in_set(s1[i], set))
-		i--;
-	return (i + 1);
-}
-
-char			*ft_strtrim(char const *s1, char const *set)
-{
-	int			i;
-	int			start_pos;
-	int			size_alloc;
-	char		*s2;
-
 	if (!s1 || !set)
 		return (NULL);
-	start_pos = start_set(s1, set);
-	size_alloc = ft_strlen(s1) - (start_set(s1, set) + end_set(s1, set));
-	if (size_alloc <= 0)
-		return ("\0");
-	if (!(s2 = (char*)malloc(sizeof(char) * size_alloc + 1)))
+	len = strlen_trim(s1, set);
+	if (!(s_new = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	i = 0;
-	while (start_pos < end_pos(s1, set))
-	{
-		s2[i] = s1[start_pos];
-		i++;
-		start_pos++;
-	}
-	s2[i] = '\0';
-	return (s2);
+	while (*s1 && isset(*s1, set))
+		s1++;
+	while (len--)
+		s_new[i++] = *s1++;
+	s_new[i] = '\0';
+	return (s_new);
 }

@@ -6,88 +6,60 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 18:28:20 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/21 16:44:23 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/22 10:48:41 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			size_alloc(int n)
-{
-	int			i;
+#include "libft.h"
 
-	i = 1;
+static int	len_num(int n)
+{
+	int	len;
+
+	len = 1;
 	if (n < 0)
 	{
-		n = n * (-1);
-		i++;
+		len++;
+		if (n == -2147483648)
+			return (11);
+		else
+			n *= -1;
 	}
-	while (n / 10 != 0)
+	while (n >= 10)
 	{
-		n = n / 10;
-		i++;
+		n /= 10;
+		len++;
 	}
-	return (i + 1);
+	return (len);
 }
 
-static char			*ft_strrev(char *str)
+char		*ft_itoa(int n)
 {
-	int			i;
-	int			len;
-	char		tmp;
-
-	i = 0;
-	len = ft_strlen(str) - 1;
-	while (i < len)
-	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
-		i++;
-		len--;
-	}
-	return (str);
-}
-
-static char			*ft_strcpy(const char *src, char *dst)
-{
+	char	*str_n;
+	int		len;
 	int		i;
+	long	n1;
+	int		i2;
 
 	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
-}
-
-char				*ft_itoa(int n)
-{
-	int			i;
-	int			neg;
-	char		*nptr;
-
-	if (!(nptr = (char*)malloc(sizeof(char) * size_alloc(n))))
+	i2 = 1;
+	n1 = (long)n;
+	len = len_num(n1);
+	if (!(str_n = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	if (n == -2147483648 || n == 0)
-		return (n == 0 ? ft_strcpy("0", nptr) : ft_strcpy("-2147483648", nptr));
-	neg = 0;
-	if (n < 0)
+	if (n1 < 0)
 	{
-		n = n * (-1);
-		neg++;
+		str_n[i++] = '-';
+		n1 *= -1;
 	}
-	i = 0;
-	while (n != 0)
+	while (len - i2 >= i)
 	{
-		nptr[i] = (n % 10) + '0';
-		n = n / 10;
-		i++;
+		str_n[len - i2] = ('0' + n1 % 10);
+		n1 /= 10;
+		i2++;
 	}
-	if (neg == 1)
-		nptr[i++] = '-';
-	nptr[i] = '\0';
-	return (ft_strrev(nptr));
+	str_n[len] = '\0';
+	return (str_n);
 }

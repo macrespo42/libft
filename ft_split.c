@@ -6,83 +6,70 @@
 /*   By: macrespo <macrespo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:38:46 by macrespo          #+#    #+#             */
-/*   Updated: 2019/10/22 11:50:02 by macrespo         ###   ########.fr       */
+/*   Updated: 2019/10/27 17:02:12 by macrespo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	strlen_split_i(char const *s, char c)
+static size_t	count_words(const char *str, char c)
 {
-	int	i;
-	int size;
+	size_t		count;
+	size_t		i;
+
+	count = 0;
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] && str[i] == c)
+			i++;
+		if (str[i] && str[i] != c)
+		{
+			count++;
+			while (str[i] && str[i] != c)
+				i++;
+		}
+	}
+	return (count);
+}
+
+static int		word_len(const char *s, int pos, char c)
+{
+	int			i;
 
 	i = 0;
-	size = 0;
-	while (s[i] && s[i] == c)
+	while (s[pos] != c && s[pos])
+	{
+		pos++;
 		i++;
-	while (s[i])
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i] == '\0')
-			return (size);
-		while (s[i] && s[i] != c)
-			i++;
-		size++;
 	}
-	return (size);
+	return (i);
 }
 
-static int	strlen_split_j(char const *s, char c, int i)
+char			**ft_split(char const *s, char c)
 {
-	int size;
+	int			i;
+	int			j;
+	int			k;
+	char		**strs;
 
-	size = 0;
-	while (s[i] && s[i++] != c)
-		size++;
-	return (size);
-}
-
-static void	fill_tab(char const *s, char *tab, int k, char c)
-{
-	int j;
-
-	j = 0;
-	while (s[k] && s[k] != c)
-	{
-		tab[j] = s[k];
-		j++;
-		k++;
-	}
-	tab[j] = '\0';
-}
-
-char		**ft_split(char const *s, char c)
-{
-	char	**tab;
-	int		len_i;
-	int		len_j;
-	int		i;
-	int		k;
-
-	i = 0;
-	k = 0;
 	if (!s)
 		return (NULL);
-	len_i = strlen_split_i(s, c);
-	if (!(tab = malloc(sizeof(char *) * (len_i + 1))))
+	if (!(strs = (char**)malloc(sizeof(char*) * (count_words(s, c) + 1))))
 		return (NULL);
-	while (i < len_i)
+	k = 0;
+	i = -1;
+	while (++i < (int)count_words(s, c))
 	{
 		while (s[k] && s[k] == c)
 			k++;
-		len_j = strlen_split_j(s, c, k);
-		if (!(tab[i] = malloc(sizeof(char*) * (len_j + 1))))
+		if (!(strs[i] = (char*)malloc(sizeof(char) * word_len(s, k, c) + 1)))
 			return (NULL);
-		fill_tab(s, tab[i++], k, c);
-		k += len_j;
+		j = 0;
+		while (s[k] != c && s[k])
+			strs[i][j++] = s[k++];
+		strs[i][j] = '\0';
 	}
-	tab[i] = NULL;
-	return (tab);
+	strs[i] = NULL;
+	return (strs);
 }

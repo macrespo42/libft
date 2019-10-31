@@ -54,6 +54,10 @@
 * ft_lstiter
 * ft_lstmap
 
+### new functions
+
+* get_next_line
+
 ## How to use ?
 
 for compile the project use the Makefile, following rules included
